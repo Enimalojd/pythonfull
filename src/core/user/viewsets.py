@@ -1,4 +1,4 @@
-from rest_framework.generics import get_object_or_404
+
 from rest_framework.permissions import AllowAny
 from rest_framework import viewsets
 from core.user.serializers import UserSerializer
@@ -16,6 +16,6 @@ class UserViewSet(viewsets.ModelViewSet):
         return User.objects.exclude(is_superuser=True)
 
     def get_object(self):
-        obj = get_object_or_404(User, public_id=self.kwargs['pk'])
+        obj = User.objects.get_object_by_public_id(self.kwargs['pk'])
         self.check_object_permissions(self.request, obj)
         return obj
