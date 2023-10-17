@@ -17,6 +17,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'core_user.User'
 
 # Application definition
 
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
 
     'core',
     'core.user',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -118,4 +120,3 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'core_user.User'
