@@ -9,6 +9,12 @@ class PostSerializer(AbstractSerializer):
     author = serializers.SlugRelatedField(queryset=User.objects.all(),
                                           slug_field='public_id')
 
+    def update(self, instance, validated_data):
+        if not instance.edited:
+            validated_data['edited'] = True
+        instance = super().update(instance, validated_data)
+        return instance
+
     def validate_author(self, value):
         if self.context["request"].user != value:
             raise ValidationError("Вы не можете создать пост для другого пользователя")
@@ -20,4 +26,3 @@ class PostSerializer(AbstractSerializer):
         fields = ['id', 'author', 'body', 'edited',
                   'created', 'updated']
         read_only_fields = ["edited"]
-
