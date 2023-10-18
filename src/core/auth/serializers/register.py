@@ -16,6 +16,6 @@ class RegisterSerializer(UserSerializer):
                   'password']
 
         def create(self, validated_data):
-            #Используем тот же метод для создания пользователя, который использовали в UserManager
+            # Используем тот же метод для создания пользователя, который использовали в UserManager
 
             return User.objects.create_user(**validated_data)
