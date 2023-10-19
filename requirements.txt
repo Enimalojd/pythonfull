@@ -4,3 +4,4 @@ psycopg2-binary
 django-filter
 Pillow
 djangorestframework-simplejwt
+drf-nested-routers

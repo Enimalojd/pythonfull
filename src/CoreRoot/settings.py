@@ -30,11 +30,13 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework_simplejwt',
+    'rest_framework_nested',
 
     'core',
     'core.user',
     'core.auth',
-    'core.post'
+    'core.post',
+    'core.comment'
 
 ]
 
