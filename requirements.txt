@@ -5,3 +5,4 @@ django-filter
 Pillow
 djangorestframework-simplejwt
 drf-nested-routers
+pytest-django
