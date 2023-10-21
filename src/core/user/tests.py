@@ -29,7 +29,7 @@ def test_create_user():
 
 @pytest.mark.django_db
 def test_create_superuser():
-    user = User.objects.create_user(**data_superuser)
+    user = User.objects.create_superuser(**data_superuser)
     assert user.username == data_superuser["username"]
     assert user.email == data_superuser["email"]
     assert user.first_name == data_superuser["first_name"]
